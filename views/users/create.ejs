@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create User</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  
+  </head>
+  <body>
+    <div class="container">
+
+      <h2>Create New User</h2>
+      <form action="/users/save" method="post">
+        <table>
+          <tbody>
+            <tr>
+              <td>Name <span style="color: red;font-weight:900;">*</span> </td>  
+              <td> <input type="text" name="name" placeholder="please enter user name" required /></td>
+            </tr>
+            <tr>
+              <td>Email <span style="color: red;font-weight:900;">*</span></td>
+              <td><input name="email" placeholder="please enter email" required /></td>
+            </tr>
+            <tr>
+              <td>Phone <span style="color: red;font-weight:900;">*</span></td>
+              <td><input type="text" name="phone" placeholder="please enter phone number" required/></td>
+            </tr>
+            <tr>
+              <td>Phone <span style="color: red;font-weight:900;">*</span></td>
+              <td><input type="text" name="password" placeholder="please enter password" required/></td>
+            </tr>
+            <tr>
+              <td>Phone <span style="color: red;font-weight:900;">*</span></td>
+              <td><input type="text" name="repassword" placeholder="please confirm password" required/></td>
+            </tr>
+            <tr>
+              <td>Created On <span style="color: red;font-weight:900;">*</span></td>
+                <td><input type="date" name="createdOn"  /></td>
+            </tr>
+            <tr>
+              <td colspan="2"><button type="submit">Save</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <button id="createButton" onclick="location.href='/users';">Users</button>
+      <button id="createButton" onclick="location.href='/';">Home</button>
+    </div>
+  </body>
+</html>

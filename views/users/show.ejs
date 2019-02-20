@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User details</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+
+      <h2>User details</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>:</td>
+            <td><%= user.name %></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>:</td>
+            <td><%= user.email %></td>
+          </tr>
+          <tr>
+            <td>Phone</td>
+            <td>:</td>
+            <td><%= user.phone %></td>
+          </tr>
+          <tr>
+            <td>Created On</td>
+              <td>:</td>
+            <td><%=user.createdOn %></td>
+          </tr>
+          <tr>
+            <td colspan="1"><button onclick="location.href='/users/edit/<%= user._id%>';">Edit</button></td>
+            <td colspan="1"><button onclick="location.href='/users';">Users</button></td>
+            <td>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <form action="/users/delete/<%= user._id%>" method="post" onSubmit="return confirm('Do you really want to delete the User ?');" >
+        <button type="submit" id="delButton">DELETE</button>
+      </form>
+    </div>
+  </body>
+</html>

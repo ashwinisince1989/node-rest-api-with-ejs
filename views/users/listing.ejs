@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <h2 >USERS LISTING </h2>
+    <div>
+      <br>
+      <% if(users.length>0) { %>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Phone</th>
+            <th>Created On<br>(mm-dd-yyyy)</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<users.length;i++) { %>
+            <tr>
+             <td ><%= users[i].name%></td>
+              <td><%= users[i].email%></td>
+              <td><%= users[i].password%></td>
+              <td><%= users[i].phone%></td>
+              <td><%= moment.utc(users[i].createdOn).format("MM-DD-YYYY") %></td>
+              <td><%= users[i].phone%></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <div>No users found.</div>
+      <% } %>
+    <input type="button" id="createButton" onclick="location.href='/users/create';" value="Create User" />
+    <input type="button" id="createButton" onclick="location.href='/';" value="Home page" />
+    </div>
+  </body>
+</html>
